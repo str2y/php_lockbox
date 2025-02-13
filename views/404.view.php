@@ -1,0 +1,1 @@
+<h1 class="max-w-screen-lg flex justify-center font-bold text-5xl mt-52 font-mono">Página não encontrada.</h1>
