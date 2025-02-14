@@ -1,3 +1,4 @@
+<?php $validacoes = flash()->get('validacoes'); ?>
 <div class="grid grid-cols-2">
     <div class="hero min-h-screen flex ml-40">
         <div class="hero-content -mt-20">
@@ -11,7 +12,6 @@
     <div class="bg-white hero mr-40 min-h-screen text-black">
         <div class="hero-content -mt-20">
             <form method="post" action="/registrar">
-                <?php $validacoes = flash()->get('validacoes'); ?>
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">Crie sua conta</div>

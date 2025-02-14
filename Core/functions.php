@@ -4,12 +4,16 @@ function base_path($path){
     return __DIR__ . '/../' . $path;
 }
 
-function view($view, $data=[])
+function redirect($uri){
+    return header('location: '.$uri);
+}
+
+function view($view, $data=[], $template = 'app')
 {
     foreach ($data as $key => $value) {
         $$key = $value;
     }
-    require base_path("views/template/app.php");
+    require base_path("views/template/$template.php");
 }
 
 function dd(...$dump)
@@ -36,7 +40,7 @@ function flash(){
 }
 
 function config($chave = null){
-    $config = require base_path('config.php');
+    $config = require base_path('config/config.php');
 
     if(strlen($chave)>0){
         return $config[$chave];
