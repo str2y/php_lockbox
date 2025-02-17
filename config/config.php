@@ -11,5 +11,9 @@ return [
         // 'dbname' => 'bookwise',
         // 'user' => 'root',
         // 'charset' => 'utf8mb4',
+    ],
+    'security' => [
+        'first_key' => '2V54ABW5H/eWXBBOMhH4HIGTdRtLK+IQvjOyXGXU+2g=',
+        'second_key' => 'SQJQOelJYSN3f7avJl1aaAi6xZxaMIR88QQkVm02o6Ae982IjJZQvA/G5r8ixFBMfn2/W6yI76GDY7vlAxWRTw=='
     ]
 ];

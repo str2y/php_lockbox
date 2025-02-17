@@ -37,7 +37,7 @@ class LoginController
             ->fetch();
         if (!($usuario && password_verify($_POST['senha'], $usuario->senha))) {
             flash()->push('validacoes', ['email' => ['Usuário ou senha estão incorretos']]);
-            return view('login', 'guest');
+            return view('login', null, 'guest');
         }
         $_SESSION['auth'] = $usuario;
         flash()->push('mensagem', 'Seja bem-vindo ' . $usuario->nome . '!');

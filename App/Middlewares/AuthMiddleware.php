@@ -6,7 +6,7 @@ class AuthMiddleware{
 
     public function handle(){
         if (!auth()){
-            return redirect('/notas');
+            return redirect('/login');
         }
     }
 }

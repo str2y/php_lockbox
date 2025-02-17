@@ -1,7 +1,8 @@
 <div class="flex space-x-4 w-full">
     <form action="/notas" class="w-full">
         <label class="input input-bordered flex items-center gap-2 w-full">
-            <input type="text" name="pesquisar" class="grow" placeholder="Pesquisar notas..." />
+            <input type="text" name="pesquisar" class="grow" placeholder="Pesquisar notas..."
+            value="<?=request()->get('pesquisar', '')?>"/>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"

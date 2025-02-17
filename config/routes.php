@@ -8,6 +8,8 @@ use App\Controllers\LoginController;
 use App\Middlewares\GuestMiddleware;
 use App\Controllers\LogoutController;
 use App\Controllers\RegisterController;
+use App\Controllers\Notas\CriarController;
+use App\Controllers\Notas\AtualizarController;
 
 (new Route())
 
@@ -22,5 +24,10 @@ use App\Controllers\RegisterController;
     ->get('/notas', Notas\IndexController::class, AuthMiddleware::class)
     ->get('/notas/criar', [Notas\CriarController::class, 'index'], AuthMiddleware::class)
     ->post('/notas/criar', [Notas\CriarController::class, 'store'], AuthMiddleware::class)
+    ->put('/nota', Notas\AtualizarController::class, AuthMiddleware::class)
+    ->delete('/nota', Notas\DeleteController::class, AuthMiddleware::class)
+
+    ->get('/mostrar', [Notas\VisualizarController::class, 'mostrar'], AuthMiddleware::class)
+    ->get('/esconder', [Notas\VisualizarController::class, 'esconder'], AuthMiddleware::class)
 
     ->run();
