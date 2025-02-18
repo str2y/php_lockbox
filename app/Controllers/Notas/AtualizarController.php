@@ -22,7 +22,10 @@ class AtualizarController
             return redirect('/notas?id=' . request()->post('id'));
         }
 
-        Nota::update(request()->post('id'), request()->post('titulo'), request()->post('nota'));
+        Nota::update(
+            request()->post('id'),
+            request()->post('titulo'),
+            request()->post('nota'));
 
         flash()->push('mensagem', 'Registro atualizado com sucesso.');
         return redirect('/notas');

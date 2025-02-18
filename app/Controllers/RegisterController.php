@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use AllowDynamicProperties;
 use Core\Database;
 use Core\Validacao;
 
@@ -17,7 +18,7 @@ class RegisterController
             'nome' => ['required'],
             'email' => ['required', 'email', 'confirmed', 'unique:usuarios'],
             'senha' => ['required', 'min:8', 'max:32', 'strong']
-        ], $_POST);
+        ], request()->all());
 
         if ($validacao->naoPassou()) {
             return view('registrar', null, 'guest');
@@ -28,9 +29,9 @@ class RegisterController
             "insert into usuarios ( nome, email, senha ) values ( :nome, :email, :senha )",
             null,
             [
-                'nome' => $_POST['nome'],
-                'email' => $_POST['email'],
-                'senha' => password_hash($_POST['senha'], PASSWORD_BCRYPT)
+                'nome' => request()->post('nome'),
+                'email' => request()->post('email'),
+                'senha' => password_hash(request()->post('senha'), PASSWORD_BCRYPT)
             ]
         );
         flash()->push('mensagem', 'Registrado com sucesso!');

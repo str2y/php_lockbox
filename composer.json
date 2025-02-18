@@ -1,0 +1,21 @@
+{
+    "name": "aldrei/lockbox",
+    "authors": [
+        {
+            "name": "aldrei",
+            "email": "aldreicr@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.73"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "app/"
+        },
+        "files": [
+            "./Core/functions.php"
+        ]
+    }
+}

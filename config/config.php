@@ -13,7 +13,7 @@ return [
         // 'charset' => 'utf8mb4',
     ],
     'security' => [
-        'first_key' => '2V54ABW5H/eWXBBOMhH4HIGTdRtLK+IQvjOyXGXU+2g=',
-        'second_key' => 'SQJQOelJYSN3f7avJl1aaAi6xZxaMIR88QQkVm02o6Ae982IjJZQvA/G5r8ixFBMfn2/W6yI76GDY7vlAxWRTw=='
+        'first_key' => env('ENCRYPT_FIRST_KEY', base64_encode('asdf')),
+        'second_key' => env('ENCRYPT_SECOND_KEY', base64_decode('asdf1243'))
     ]
 ];

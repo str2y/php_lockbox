@@ -52,9 +52,9 @@ function config($chave = null)
         foreach (explode('.', $chave) as $index => $key) {
             $tmp = $index == 0 ? $config[$key] : $tmp[$key];
         }
-        return $config[$chave];
+        return $tmp;
     }
-    return $tmp;
+    return $config;
 }
 
 function auth()
@@ -121,4 +121,9 @@ function decrypt($input)
         return $data;
 
     return false;
+}
+
+function env($key, $default = null){
+    $env = parse_ini_file(base_path('.env'));
+    return isset($env[$key]) ? $env[$key] : $default;
 }

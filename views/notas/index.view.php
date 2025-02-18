@@ -5,7 +5,7 @@
         <?php if ($key == 0): ?> rounded-tl-box <?php endif; ?>
         <?php if ($nota->id == $notaSelecionada->id): ?> bg-base-200 <?php endif; ?>">
             <?= $nota->titulo ?> <br />
-            <span class="text-xs">id: <?= $nota->id ?></span>
+            <span class="text-xs">id: <?= $nota->id ?> || criado: <?=$nota->dataCriacao()->locale('pt_BR')->diffForHumans()?></span>
         </a>
     <?php endforeach; ?>
 </div>
